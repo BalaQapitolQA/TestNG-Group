@@ -7,7 +7,7 @@ node {
     }
 
     stage('Run') {
-        def mavencmd = "mvn -f /usr/local/maven_project/pom.xml clean  -DgroupToRun=$groupToRun"
+        def mavencmd = "mvn -f /usr/local/maven_project/pom.xml clean test -Dsurefire.suiteXmlFiles=testng.xml -DgroupToRun=$groupToRun"
     }
 
     

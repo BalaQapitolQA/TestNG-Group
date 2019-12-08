@@ -2,18 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="false">
 	<test name="Test">
-		<method-selectors>
-			<method-selector>
-				<script language="beanshell">
-				<!-- groupToRun is a VM argument. -->
-				<![CDATA[groupNames = System.getProperty("groupToRun");
-				groups.containsKey(groupNames);
-				]]>
-				</script>
-			</method-selector>
-		</method-selectors>
+		<groups>
+			<run>
+				<include name="${groupToRun}" />
+			</run>
+		</groups>
 		<classes>
-      <class name="Jenkins.TestNGGroup.SeleniumTest"/>
-    </classes>
+			<class name="Jenkins.TestNGGroup.SeleniumTest" />
+		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
