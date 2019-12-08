@@ -1,0 +1,15 @@
+import java.lang.*;
+
+node {
+
+    stage('intialize') {
+        checkout scm
+    }
+
+    stage('Run') {
+        def mavencmd = "mvn -f /usr/local/maven_project/pom.xml clean  -DgroupToRun=$groupToRun"
+    }
+
+    
+
+ }
